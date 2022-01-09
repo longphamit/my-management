@@ -2,7 +2,7 @@ import httpClient from "../utils/http-client";
 
 export const loginService=async(email:string,password:string)=>{
     const response=await httpClient.post({
-        url:"",
+        url:"http://localhost:8080/test",
         data:{
             email,
             password

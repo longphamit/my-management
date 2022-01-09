@@ -1,0 +1,6 @@
+.admin-login-form {
+  -webkit-box-shadow: 13px 16px 33px -20px rgba(0, 0, 0, 0.71);
+  box-shadow: 13px 16px 33px -20px rgba(0, 0, 0, 0.71);
+  padding: 50px;
+  border-radius: 10px;
+}

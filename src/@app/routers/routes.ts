@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import AdminLayout from "../components/admin-layout";
 import AuthPage from "../pages/AuthPage";
+import LoginPage from "../pages/login/LoginPage";
 
 interface Route {
   component: React.FC;
@@ -15,6 +16,11 @@ const routes: Route[] = [
     isLayout:true,
     layout:AdminLayout
   },
+  {
+    component: LoginPage,
+    path:"/login",
+    isLayout:false,
+  }
   
 ];
 
