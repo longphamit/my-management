@@ -9,7 +9,7 @@ const LoginPage: React.FC = () => {
   let navigate = useNavigate();
   const dispatch=useDispatch();
   const onFinish = async(values: any) => {
-    const data=unwrapResult(await dispatch(loginAction({ email: "phamlong992k@gmail.com", password: "Goboi123" })));
+    const data=await dispatch(loginAction({ email: "phamlong992k@gmail.com", password: "Goboi123" }));
     console.log(data)
   };
 
