@@ -9,16 +9,17 @@ const LoginPage: React.FC = () => {
   let navigate = useNavigate();
   const dispatch=useDispatch();
   const onFinish = async(values: any) => {
-    const data=await dispatch(loginAction({ email: "phamlong992k@gmail.com", password: "Goboi123" }));
-    console.log(data)
+    const data= await dispatch(loginAction({ email: "phamlong992k@gmail.com", password: "Goboi123" }));
+    
   };
 
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
   return (
-    <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
-      <Col>
+    <Row style={{ minHeight: "100vh" }}>
+      <Col span={8}/>
+      <Col span={8}>
         <Form
             className="admin-login-form"
           name="basic"
@@ -61,6 +62,7 @@ const LoginPage: React.FC = () => {
           </Row>
         </Form>
       </Col>
+      <Col span={8}/>
     </Row>
   );
 };

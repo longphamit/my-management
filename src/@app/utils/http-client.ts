@@ -7,7 +7,6 @@ interface Options {
   url: ((al: typeof apiLinks) => string) | string;
   data?: object | string;
   params?: object;
-  signal?: AbortSignal;
   contentType?: string;
   responseType?: ResponseType;
   // onUploadProgress: () => void;
@@ -24,16 +23,9 @@ const request = (arg: FullOptions): Promise<AxiosResponse> => {
     url,
     data,
     params,
-    signal,
     responseType = 'json',
   } = arg;
 
-  const source = axios.CancelToken.source();
-  if (signal) {
-    signal.addEventListener('abort', () => {
-      source.cancel();
-    });
-  }
 
   const { token } = store.getState().auth;
 
@@ -47,7 +39,6 @@ const request = (arg: FullOptions): Promise<AxiosResponse> => {
     data,
     params,
     responseType,
-    cancelToken: source.token,
   });
 };
 

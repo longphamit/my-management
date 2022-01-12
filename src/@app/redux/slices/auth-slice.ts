@@ -33,6 +33,7 @@ const authSlice = createSlice({
       return {
         ...state,
         isLoading: false,
+        token:payload
       };
     });
   },

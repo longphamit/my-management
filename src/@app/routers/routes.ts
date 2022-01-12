@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import AdminLayout from "../components/admin-layout";
 import AuthPage from "../pages/AuthPage";
 import LoginPage from "../pages/login/LoginPage";
+import Meeting from "../pages/Meeting";
 
 interface Route {
   component: React.FC;
@@ -20,6 +21,12 @@ const routes: Route[] = [
     component: LoginPage,
     path:"/login",
     isLayout:false,
+  },
+  {
+    component: Meeting,
+    path:"/meeting",
+    isLayout:true,
+    layout:AdminLayout
   }
   
 ];
